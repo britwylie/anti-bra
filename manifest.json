@@ -1,0 +1,31 @@
+// Combining things from @nkhil and the chrome tutorial 
+// modified by bwylie
+
+{
+  "name": "Anti-Bra Extension",
+  "version": "1.0",
+  "description": "Change all instances of 'mask' to 'bra' so you can feel some semblence of happiness in this pit of despair we live in",
+  
+	"icons": {
+      "16": "images/get_started16.png",
+      "32": "images/get_started32.png",
+      "48": "images/get_started48.png",
+      "128": "images/get_started128.png"
+    },
+	"browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+      }
+    },
+    "content_scripts":[{
+    	//"matches":["<all_urls>"],
+    	"matches": ["*://*/*"],
+    	"js":["background.js"],
+    	"run_at":"document_end"
+    }],
+  "manifest_version": 2
+}
